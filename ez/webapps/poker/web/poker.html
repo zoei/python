@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>斗地主</title>
+<script type="text/javascript" src="script/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="script/myscript.js"></script>
+<script type="text/javascript" src="script/poker.js"></script>
+<script type="text/javascript" src="script/chat.js"></script>
+<link rel="stylesheet" href="css/poker.css" type="text/css" />
+</head>
+<body>
+<div class="panel">
+	<table border="1">
+		<tr height="50">
+			<td width="87"></td>
+			<td width="600" align="center">
+			<span>叫分：<span id="bet">3</span>分</span>
+			<span>倍数：<span id="bet">1</span>倍</span>
+			<td width="87"></td>
+			<td width="200" rowspan="5">
+				<input type="text" id="nickname" value="zoei"/><br>
+				<textarea id="chatLog" rows="20" cols="20"></textarea><br>
+				<textarea id="inputMessage" rows="2" cols="20" ></textarea><br>
+				<button id="send">发送</button><button id="reset">清空</button><button id="getJson">get json</button>
+			</td>
+		</tr>
+		<tr height="100">
+			<td>
+				<span class="name">天下第一等</span>
+				<img class="headicon" id="p20" alt="" src="images/headicon/1.gif">
+			</td>
+			<td align="center">
+				<img class="card" id="c12" alt="" src="images/12.png">
+				<img class="card" id="c13" alt="" src="images/13.png">
+				<img class="card" id="c14" alt="" src="images/14.png">
+			</td>
+			<td align="right">
+				<span class="name">财神</span>
+				<img class="headicon" id="p300" alt="" src="images/headicon/0.gif">
+			</td>
+		</tr>
+		<tr height="100">
+			<td class="p2" valign="top">
+				<img class="card" id="p200" alt="" src="images/-1.png">
+				<div class="cardsLeft"><span>13</span></div>
+			</td>
+			<td class="dropCards" align="center"></td>
+			<td class="p3" align="right" valign="top">
+				<img class="card" id="p300" alt="" src="images/-1.png">
+				<div class="cardsLeft"><span>10</span></div>
+			</td>
+		</tr>
+		<tr height="20">
+			<td width="87"></td>
+			<td width="600" align="center" valign="top">
+				<div id="controlBtn">
+					<input type="button" id="btn1" value="出牌"/>
+					<input type="button" value="提示"/>
+					<input type="button" value="PASS"/>
+				</div>
+				<div id="betBtn">
+					<input type="button" id="btn1" value="1"/>
+					<input type="button" value="2"/>
+					<input type="button" value="3"/>
+				</div>
+			</td>
+			<td width="87"></td>
+		</tr>
+		<tr height="150">
+			<td class="p1" colspan="3" align="center" valign="bottom"></td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

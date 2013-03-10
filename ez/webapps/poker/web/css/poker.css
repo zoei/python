@@ -1,0 +1,41 @@
+/*
+    (c) 2009 ajaxBlender - Source files for AB articles
+    General CSS Stylesheet 
+*/
+
+div.panel
+{
+background-image: url(/images/bg/bg1.gif);
+margin:0px;
+padding:5px;
+margin-left: 10%;
+margin-top: 5%;
+border:solid 1px #c3c3c3;
+width: 1000px;
+}
+.cardsLeft{
+margin-top: -37px;
+}
+.p2 div{
+margin-top: 27px;
+}
+.p3 div{
+margin-top: 27px;
+}
+.p2 img{
+margin-top: 20px;
+position:relative;
+}
+.p3 img{
+margin-top: 20px;
+position:relative;
+}
+.dropCards{
+margin-left: -40px;
+}
+.p1 img{
+margin-left: -45px;
+}
+.p1 .select{
+margin-bottom: 40px;
+}

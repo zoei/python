@@ -1,0 +1,294 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0037)http://172.26.184.150/reviews/r/1342/ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><HEAD>
+<META content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" http-equiv="X-UA-Compatible">
+<META content="text/html; charset=utf-8" 
+http-equiv="Content-Type"><TITLE>[naviserver:@122855:添加导出JMX功能，并且修改传多个OBJECT时报错的BUG.] 
+| Review Request | Review Board</TITLE>
+<SCRIPT type="text/javascript">
+    var AJAX_SERIAL = "1358316734",
+        SITE_ROOT = "/reviews/",
+        STATIC_URLS = {
+            'rb/images/delete.png': '/reviews/static/rb/images/delete.95473b944cb8.png',
+            'rb/images/edit.png': '/reviews/static/rb/images/edit.4a4cf60e1815.png',
+            'rb/images/favicon_notify.ico': '/reviews/static/rb/images/favicon_notify.43aac64f3b61.ico',
+            'rb/images/resize-grip.png': '/reviews/static/rb/images/resize-grip.b822a7e06419.png',
+            'rb/images/spinner.gif': '/reviews/static/rb/images/spinner.73e57937304d.gif',
+            'rb/images/star_off.png': '/reviews/static/rb/images/star_off.ff4b3c60fb2b.png',
+            'rb/images/star_on.png': '/reviews/static/rb/images/star_on.e5a492043090.png'
+        },
+
+        gUserName = "caozhenyu",
+        gUserFullName = "Zhenyu Cao",
+
+        gUserAuthenticated = true;
+
+
+
+
+  var gUserURL = "/reviews/users/caozhenyu/";
+  var gOpenAnIssue = true;
+
+
+
+  /*
+   * Initial state from the server. These should all be thought of as
+   * constants, not state.
+   */
+
+  var gBugTrackerURL = "";
+  var gReviewRequestPath = "/reviews/r/1342/";
+  var gReviewRequestId = "1342";
+  var gReviewRequestSummary = "[naviserver:@122855:添加导出JMX功能，并且修改传多个OBJECT时报错的BUG.]";
+  var gReviewRequestSitePrefix = "";
+  var gReviewPending = false;
+
+
+  var gEditable = true;
+
+
+
+
+
+  </SCRIPT>
+<LINK rel="shortcut icon" type="image/x-icon" href="/reviews/static/rb/images/favicon.3161c840d49e.ico"><LINK 
+rel="apple-touch-icon-precomposed" type="image/png" href="/reviews/static/rb/images/apple-home-icon.fd8758a2ebe3.png"><LINK 
+rel="stylesheet" type="text/css" href="[naviserver@122855添加导出JMX功能，并且修改传多个OBJECT时报错的BUG_]%20%20Review%20Request%20%20Review%20Board_files/common.min.8d7bf2d2a824.css"><LINK 
+rel="stylesheet" type="text/css" href="[naviserver@122855添加导出JMX功能，并且修改传多个OBJECT时报错的BUG_]%20%20Review%20Request%20%20Review%20Board_files/reviews.min.b7cdf44c7ca2.css">
+<STYLE type="text/css">
+  .ew { background: #ee3434; }
+</STYLE>
+<!--[if lt IE 7.]>
+  <style type="text/css">
+    body {
+      behavior: url("/reviews/static/lib/js/csshover2.40df985cb243.htc");
+    }
+
+    img,
+    table.sidebyside .commentflag,
+    .box.important .box-inner {
+      behavior: url("/reviews/static/lib/js/pngfix.66b813db86c1.htc");
+    }
+
+   #review-banner .banner { position: absolute; }
+
+  </style>
+  <![endif]--><!--[if lt IE 8.]>
+  <link rel="stylesheet" type="text/css" href="/reviews/static/rb/css/ie_hacks.e31a795a9b81.css"></script>
+  <![endif]-->
+<SCRIPT type="text/javascript" src="[naviserver@122855添加导出JMX功能，并且修改传多个OBJECT时报错的BUG_]%20%20Review%20Request%20%20Review%20Board_files/jquery-1.8.2.min.cfa9051cc0b0.js"></SCRIPT>
+
+<META name="GENERATOR" content="MSHTML 9.00.8112.16464"></HEAD>
+<BODY>
+<DIV style="display: none;" id="review-banner">
+<DIV class="banner">
+<H1>You have a pending review.</H1><INPUT id="review-banner-edit" value="Edit Review" type="button"><INPUT id="review-banner-publish" value="Publish" type="button"><INPUT id="review-banner-discard" value="Discard" type="button"></DIV>
+</DIV>
+<DIV style="display: none; position: absolute;" id="comment-detail">
+<DIV id="review_comments">
+<H1 class="title">Other reviews</H1>
+<UL id="review_comment_list"></UL></DIV>
+<FORM id="draft-form" method="post">
+<H1 class="title">Your comment</H1><INPUT id="comment_action" name="action" 
+type="hidden"><TEXTAREA id="comment_text" cols="30" rows="6" name="text"></TEXTAREA>
+<DIV id="comment-issue-options"><INPUT id="comment_issue" name="comment_issue" 
+type="checkbox"><LABEL for="comment_issue">Open an <U>i</U>ssue</LABEL></DIV>
+<DIV class="status"></DIV>
+<DIV class="buttons"><INPUT id="comment_save" disabled="true" value="Save" type="button"><INPUT id="comment_cancel" disabled="true" value="Cancel" type="button"><INPUT id="comment_delete" disabled="true" value="Delete" type="button"></DIV></FORM>
+</DIV>
+<DIV id="container">
+<DIV id="headerbar">
+<DIV id="rbinfo"><A href="http://172.26.184.150/reviews/"><IMG id="logo" border="0" 
+alt="" src="[naviserver@122855添加导出JMX功能，并且修改传多个OBJECT时报错的BUG_]%20%20Review%20Request%20%20Review%20Board_files/logo.5681e9c88672.png"></A>
+<H1 id="title"><A href="http://172.26.184.150/reviews/">Review Board</A><SPAN 
+class="version">1.7.1</SPAN></H1></DIV>
+<UL id="accountnav">
+  <LI><A href="http://172.26.184.150/reviews/r/1342/#">Support</A>
+  <UL>
+    <LI><A 
+    href="http://www.reviewboard.org/docs/manual/1.7/">Documentation</A></LI>
+    <LI><A href="http://support.beanbaginc.com/">Get Support</A></LI></UL></LI>
+  <LI><A class="user-nav-item" href="http://172.26.184.150/reviews/account/preferences/"><IMG 
+  class="gravatar" alt="Zhenyu Cao" src="[naviserver@122855添加导出JMX功能，并且修改传多个OBJECT时报错的BUG_]%20%20Review%20Request%20%20Review%20Board_files/dcde9c235fac915360f1498de71751ce.jpg" 
+  width="32" height="32"> Zhenyu</A>
+  <UL>
+    <LI><A href="http://172.26.184.150/reviews/account/preferences/">My 
+    account</A></LI>
+    <LI><A href="http://172.26.184.150/reviews/account/logout/">Log 
+  out</A></LI></UL></LI></UL>
+<DIV id="search"><INPUT id="search_field" name="q" type="text" placeholder="Jump to..."></DIV><BR></DIV>
+<UL id="navbar">
+  <LI><A href="http://172.26.184.150/reviews/dashboard/">My Dashboard</A></LI>
+  <LI><A href="http://172.26.184.150/reviews/r/new/">New Review Request</A></LI>
+  <LI><A href="http://172.26.184.150/reviews/r/">All review requests</A></LI>
+  <LI><A href="http://172.26.184.150/reviews/groups/">Groups</A></LI>
+  <LI><A href="http://172.26.184.150/reviews/users/">Submitters</A></LI></UL>
+<DIV id="page-container"><NOSCRIPT>&lt; div class="box-container"&gt; &lt;div 
+class="box important"&gt;  &lt;div class="box-inner"&gt;     
+&lt;h1&gt;JavaScript is turned off&lt;/h1&gt;     &lt;p&gt;Review Board requires 
+JavaScript in order to function.     Please turn it on in your browser 
+preferences.     &lt;p&gt;Firefox users: if you prefer to turn on JavaScript 
+only     for specific sites, we recommend the     &lt;a 
+href="https://addons.mozilla.org/en-US/firefox/addon/722"&gt;NoScript     
+extension&lt;/a&gt;.&lt;/p&gt;  &lt;/div&gt; &lt;/div&gt;&lt; /div&gt;    
+</NOSCRIPT>
+<DIV id="error"></DIV>
+<DIV id="container">
+<DIV id="content">
+<DIV style="display: none;" id="draft-banner" class="banner">
+<H1>This review request is a draft.</H1> Be sure to publish when finished. <INPUT id="btn-draft-publish" value="Publish Changes" type="button"><INPUT id="btn-draft-discard" value="Discard Draft" type="button">
+<P><LABEL for="changedescription">Describe your changes (optional):</LABEL></P><PRE id="changedescription" class="editable"></PRE></DIV>
+<DIV class="box-container">
+<DIV class="box review-request">
+<DIV class="box-inner">
+<DIV class="actions-container"><IMG class="star" title="Click to star" border="0" 
+alt="Click to star" src="[naviserver@122855添加导出JMX功能，并且修改传多个OBJECT时报错的BUG_]%20%20Review%20Request%20%20Review%20Board_files/star_off.ff4b3c60fb2b.png" 
+width="16" height="15" data-object-id="1342" data-object-type="reviewrequests" 
+data-starred="0">
+<UL class="actions">
+  <LI><A id="close-review-request-link" class="menu-title" href="http://172.26.184.150/reviews/r/1342/#">Close</A>
+  <UL style="display: none;" class="menu">
+    <LI><A id="link-review-request-close-submitted" href="http://172.26.184.150/reviews/r/1342/#">Submitted</A></LI>
+    <LI><A id="discard-review-request-link" href="http://172.26.184.150/reviews/r/1342/#">Discarded</A></LI></UL></LI>
+  <LI><A id="update-review-request-link" class="menu-title" href="http://172.26.184.150/reviews/r/1342/#">Update</A>
+  <UL style="display: none;" class="menu">
+    <LI><A id="upload-diff-link" 
+    href="http://172.26.184.150/reviews/r/1342/#">Update Diff</A></LI>
+    <LI><A id="upload-file-link" 
+    href="http://172.26.184.150/reviews/r/1342/#">Add File</A></LI></UL></LI>
+  <LI class="primary"><A 
+  href="http://172.26.184.150/reviews/r/1342/diff/raw/">Download Diff</A></LI>
+  <LI class="primary"><A id="review-link" href="http://172.26.184.150/reviews/r/1342/#">Review</A></LI>
+  <LI class="primary"><A id="shipit-link" href="http://172.26.184.150/reviews/r/1342/#">Ship 
+  It!</A></LI>
+  <LI class="primary"><A href="http://172.26.184.150/reviews/r/1342/diff/#index_header">View 
+  Diff</A></LI></UL></DIV>
+<DIV class="main">
+<SCRIPT type="text/javascript">
+  $(document).ready(function() {
+
+    $("#upload-diff-link").click(function() {
+      $("<div/>")
+        .formDlg({
+          title: "Upload Diff",
+          confirmLabel: "Upload",
+          dataStoreObject: gReviewRequest.createDiff(),
+          width: "60em",
+          upload: true,
+          fields: [ { name: 'basedir', label: '<label for="id_basedir">Base Directory:</label>', required: true, help_text: 'The absolute path in the repository the diff was generated in.', widget: '<input type="text" name="basedir" value="/" id="id_basedir" />' },{ name: 'path', label: '<label for="id_path">Diff:</label>', required: true, help_text: 'The new diff to upload.', widget: '<input type="file" name="path" id="id_path" />' },{ name: 'parent_diff_path', label: '<label for="id_parent_diff_path">Parent Diff:</label>', help_text: 'An optional diff that the main diff is based on. This is usually used for distributed revision control systems (Git, Mercurial, etc.).', widget: '<input type="file" name="parent_diff_path" id="id_parent_diff_path" />' } ]
+        });
+
+      return false;
+    });
+
+
+    $("#upload-file-link").click(function() {
+      $("<div/>").formDlg({
+        title: "Upload File",
+        confirmLabel: "Upload",
+        dataStoreObject: gReviewRequest.createFileAttachment(),
+        width: "50em",
+        upload: true,
+        fields: [ { name: 'caption', label: '<label for="id_caption">Caption:</label>', widget: '<input type="text" name="caption" id="id_caption" />' },{ name: 'path', label: '<label for="id_path">Path:</label>', required: true, widget: '<input type="file" name="path" id="id_path" />' } ],
+        success: function(rsp) {
+            if (!$("#file-list").length == 0) {
+                $.newFileAttachment(rsp.file_attachment);
+            }
+
+            RB.draftBanner.show();
+        }
+      });
+
+      return false;
+    });
+  });
+</SCRIPT>
+
+<DIV class="header">
+<DIV id="summary_wrapper"><LABEL for="summary">Summary:</LABEL>
+<H1 id="summary" 
+class="editable required">[naviserver:@122855:添加导出JMX功能，并且修改传多个OBJECT时报错的BUG.]</H1></DIV>
+<P id="status">        Review Request <A href="http://172.26.184.150/reviews/r/1342/">#1342</A> 
+-          Created March 7, 2013 and updated   <time class="timesince" datetime="2013-03-07T09:37:35.584659+00:00">March 
+7, 2013, 9:37 a.m.</time></P></DIV>
+<DIV id="details">
+<DIV id="review-request-warning"></DIV>
+<TABLE class="details-column">
+  <COLGROUP>
+  <COL width="0%">
+  <COL width="100%"></COLGROUP>
+  <TBODY>
+  <TR>
+    <TH class="label"><LABEL for="submitter">Submitter:</LABEL></TH>
+    <TD class="value"><A id="submitter" class="user" href="http://172.26.184.150/reviews/users/caozhenyu/">Zhenyu 
+      Cao</A></TD></TR>
+  <TR>
+    <TH class="label"><LABEL for="branch">Branch:</LABEL></TH>
+    <TD id="branch-value-cell" class="value"><SPAN id="branch" class="editable">trunk/tools/TamaTester/HttpClientTest/config/application-config.xml</SPAN></TD></TR>
+  <TR>
+    <TH class="label"><LABEL for="bugs_closed">Bugs:</LABEL></TH>
+    <TD id="bugs-closed-value-cell" class="value"><SPAN id="bugs_closed" 
+      class="editable comma-editable"></SPAN></TD></TR></TBODY></TABLE>
+<TABLE class="details-column">
+  <COLGROUP>
+  <COL width="0%">
+  <COL width="100%"></COLGROUP>
+  <TBODY>
+  <TR>
+    <TH class="caption">     Reviewers    </TH>
+    <TD><SPAN class="required-flag">*</SPAN></TD></TR>
+  <TR class="indented">
+    <TH class="label"><LABEL for="target_groups">Groups:</LABEL></TH>
+    <TD id="target-groups-value-cell" class="value"><SPAN id="target_groups" 
+      class="editable"><A 
+      href="http://172.26.184.150/reviews/groups/ns_tama/">ns_tama</A></SPAN></TD></TR>
+  <TR class="indented">
+    <TH class="label"><LABEL for="target_people">People:</LABEL></TH>
+    <TD id="target-people-value-cell" class="value"><SPAN id="target_people" 
+      class="editable comma-editable"></SPAN></TD></TR>
+  <TR>
+    <TH class="label"><LABEL for="repository">Repository:</LABEL></TH>
+    <TD class="value"><SPAN 
+id="repository">naviserver</SPAN></TD></TR></TBODY></TABLE></DIV>
+<DIV id="description-value-cell" class="content"><LABEL 
+for="description">Description:</LABEL><PRE id="description" class="editable required">[2013-03-07 17:47:57 +0800 (Thu, 07 Mar 2013):添加导出JMX功能，并且修改传多个OBJECT时报错的BUG.]</PRE></DIV>
+<DIV id="testing-done-value-cell" class="content"><LABEL 
+for="testing_done">Testing Done:</LABEL><PRE id="testing_done" class="editable"></PRE></DIV>
+<DIV id="required-field-legend" class="content"><SPAN 
+class="required-flag">*</SPAN> Required Field</DIV>
+<DIV style="display: none;" class="content clearfix"><LABEL 
+for="images">Screenshots:</LABEL>
+<DIV id="screenshot-thumbnails"><BR clear="both"></DIV></DIV>
+<DIV style="display: none;" class="content clearfix"><LABEL for="file-list">File 
+Attachments:</LABEL>
+<DIV id="file-list"><BR clear="both"></DIV></DIV>
+<SCRIPT type="text/javascript">
+  $(document).ready(function() {
+    RB.setFileAttachmentComments({
+
+    });
+  });
+</SCRIPT>
+
+<UL class="controls"></UL></DIV></DIV></DIV></DIV>
+<SCRIPT type="text/javascript">
+  $(document).ready(function() {
+	  /* Listen for updates to this review request. */
+	  RB.registerForUpdates("2013-03-07T09:37:35.584659+00:00");
+
+
+
+  });
+</SCRIPT>
+</DIV></DIV></DIV></DIV>
+<SCRIPT type="text/javascript" src="[naviserver@122855添加导出JMX功能，并且修改传多个OBJECT时报错的BUG_]%20%20Review%20Request%20%20Review%20Board_files/jquery-ui-1.8.24.custom.min.f6148fb67d77.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" charset="utf-8" src="[naviserver@122855添加导出JMX功能，并且修改传多个OBJECT时报错的BUG_]%20%20Review%20Request%20%20Review%20Board_files/3rdparty.min.d0c94a10316f.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="[naviserver@122855添加导出JMX功能，并且修改传多个OBJECT时报错的BUG_]%20%20Review%20Request%20%20Review%20Board_files/jquery.gravy.4fdf67ffee95.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" charset="utf-8" src="[naviserver@122855添加导出JMX功能，并且修改传多个OBJECT时报错的BUG_]%20%20Review%20Request%20%20Review%20Board_files/base.min.86708c2a630f.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" charset="utf-8" src="[naviserver@122855添加导出JMX功能，并且修改传多个OBJECT时报错的BUG_]%20%20Review%20Request%20%20Review%20Board_files/reviews.min.09aa8a0c0147.js"></SCRIPT>
+</BODY></HTML>

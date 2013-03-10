@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>JavaScript Demos - Rotate Image using Canvas</title>
+
+<script type="text/javascript" src="script/jquery-1.7.2.min.js"></script>
+<link href="css/main.css" type="text/css" rel="stylesheet" />
+
+<script type="text/javascript">
+    var img = null, canvas = null;
+	$(document).ready(function(){
+	   //  Initialize image and canvas
+	   img = document.getElementsByName('img');
+	   canvas = document.getElementById('canvas');
+	   
+	   if(!canvas || !canvas.getContext){
+	       canvas.parentNode.removeChild(canvas);
+	   } else {
+	       img.style.position = 'absolute';
+	       img.style.visibility = 'hidden';
+	   }
+	   rotateImage(90);
+	});
+	
+	function rotateImage(degree){
+        if(document.getElementById('canvas')){
+           var cContext = canvas.getContext('2d');
+           var cw = img.width, ch = img.height, cx = 0, cy = 0;
+
+           //   Calculate new canvas size and x/y coorditates for image
+           switch(degree){
+                case 90:
+                    cw = img.height;
+                    ch = img.width;
+                    cy = img.height * (-1);
+                    break;
+                case 180:
+                    cx = img.width * (-1);
+                    cy = img.height * (-1);
+                    break;
+                case 270:
+                    cw = img.height;
+                    ch = img.width;
+                    cx = img.width * (-1);
+                    break;
+           }
+
+            //  Rotate image            
+			canvas.setAttribute('width', cw);
+			canvas.setAttribute('height', ch);
+			cContext.rotate(degree * Math.PI / 180);
+			cContext.drawImage(img, cx, cy);
+        } else {
+            //  Use DXImageTransform.Microsoft.BasicImage filter for MSIE
+            switch(degree){
+                case 0: image.style.filter = 'progid:DXImageTransform.Microsoft.BasicImage(rotation=0)'; break;
+                case 90: image.style.filter = 'progid:DXImageTransform.Microsoft.BasicImage(rotation=1)'; break;
+                case 180: image.style.filter = 'progid:DXImageTransform.Microsoft.BasicImage(rotation=2)'; break;
+                case 270: image.style.filter = 'progid:DXImageTransform.Microsoft.BasicImage(rotation=3)'; break;
+            }
+        }
+	}
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+    <div id="page">
+        <div>
+            <img src="images/-1.png" alt="" class="image" />
+            <img src="images/0.png" alt="" class="image" />
+            <img src="images/1.png" alt="" class="image" />
+            <img src="images/2.png" alt="" class="image" />
+            <img src="images/3.png" alt="" class="image" />
+            <img src="images/4.png" alt="" class="image" />
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+</body>
+</html>
